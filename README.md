@@ -2,7 +2,7 @@
 
 Git ts basics
 
-this is udpated develop
+this is udpated develop 2
 
 ## Getting started
 
