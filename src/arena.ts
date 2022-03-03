@@ -52,16 +52,7 @@ export class Arena {
   }
 
   private calculateOdds(firstAdvantage: boolean, secondAdvantage: boolean): number {
-    if (firstAdvantage) {
-      if (secondAdvantage) {
-        return 50;
-      }
-      return 70;
-    }
-    if (secondAdvantage) {
-      return 30;
-    }
-    return 50;
+    return firstAdvantage ? (secondAdvantage ? 50 : 70) : secondAdvantage ? 30 : 50;
   }
 
 }
