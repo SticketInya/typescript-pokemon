@@ -16,8 +16,12 @@ const blastoise: Pokemon = {
   name: "Blastoise",
   type: [PokemonType.WATER],
 };
+const venosaur: Pokemon = {
+  name: "Venosaur",
+  type: [PokemonType.GRASS, PokemonType.POSION],
+};
 
-const arena = new Arena(ash, charizard, blastoise);
+const arena = new Arena(ash, charizard, venosaur);
 
 function sayMyName(champ: Champion): void {
   console.log(`My name is: ${champ.name}`);
