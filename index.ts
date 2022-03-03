@@ -18,7 +18,7 @@ const blastoise: Pokemon = {
 };
 const venosaur: Pokemon = {
   name: "Venosaur",
-  type: [PokemonType.GRASS, PokemonType.POSION],
+  type: [PokemonType.GRASS, PokemonType.POISON],
 };
 
 const arena = new Arena(ash, charizard, venosaur);
