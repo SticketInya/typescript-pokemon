@@ -16,9 +16,54 @@ export class Arena {
   }
 
   public wouldMyPokemonWinInAFight(): boolean {
-    console.log(this.pokemon.name, this.enemyPokemon.name);
-    return true;
+    const doesFirstHaveAdvantage: boolean = this.hasTypeAdvantage(this.pokemon, this.enemyPokemon);
+    const doesSecondHaveAdvantage: boolean = this.hasTypeAdvantage(this.enemyPokemon, this.pokemon);
+    const odds: number = this.calculateOdds(doesFirstHaveAdvantage, doesSecondHaveAdvantage);
+    const matchResult = Math.floor(Math.random() * 100);
+
+    return matchResult <= odds;
   }
+
+  private hasTypeAdvantage(pokemon1: Pokemon, pokemon2: Pokemon): boolean {
+    if (pokemon1.type == null || pokemon2.type == null) return false;
+    const results: boolean[] = pokemon1.type.map(element => {
+      return this.isElementPriority(element, pokemon2.type);
+    })
+    const hasAdvantage = results.indexOf(true) !== -1;
+
+    return hasAdvantage;
+  }
+
+  private isElementPriority(element1: string, element2: string[]): boolean {
+    switch (element1) {
+      case "grass":
+        //return element2.includes("water");
+        return element2.indexOf("water") !== -1;
+
+      case "water":
+        return element2.indexOf("fire") !== -1;
+
+      case "fire":
+        return element2.indexOf("grass") !== -1;
+
+      default:
+        return false;
+    }
+  }
+
+  private calculateOdds(firstAdvantage: boolean, secondAdvantage: boolean): number {
+    if (firstAdvantage) {
+      if (secondAdvantage) {
+        return 50;
+      }
+      return 70;
+    }
+    if (secondAdvantage) {
+      return 30;
+    }
+    return 50;
+  }
+
 }
 
 // function wouldMyPokemonWinInAFight(
