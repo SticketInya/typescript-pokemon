@@ -10,11 +10,11 @@ const ash: Champion = {
 };
 const charizard: Pokemon = {
   name: "Charizard",
-  type: PokemonType.FIRE,
+  type: [PokemonType.FIRE],
 };
 const venosaur: Pokemon = {
   name: "Venosaur",
-  type: PokemonType.GRASS,
+  type: [PokemonType.GRASS, PokemonType.POSION],
 };
 
 const arena = new Arena(ash, charizard, venosaur);
