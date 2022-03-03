@@ -12,12 +12,12 @@ const charizard: Pokemon = {
   name: "Charizard",
   type: PokemonType.FIRE,
 };
-const blastoise: Pokemon = {
-  name: "B",
-  type: PokemonType.WATER,
+const venosaur: Pokemon = {
+  name: "Venosaur",
+  type: PokemonType.GRASS,
 };
 
-const arena = new Arena(ash, charizard, blastoise);
+const arena = new Arena(ash, charizard, venosaur);
 
 function sayMyName(champ: Champion): void {
   console.log(`My name is: ${champ.name}`);
