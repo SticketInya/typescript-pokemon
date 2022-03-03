@@ -2,6 +2,7 @@ export enum PokemonType {
   WATER = "water",
   FIRE = "fire",
   GRASS = "grass",
+  POISON = "poison",
 }
 
 export type Champion = {
@@ -9,6 +10,6 @@ export type Champion = {
   age: number;
 };
 export interface Pokemon {
-  type: PokemonType;
+  type: PokemonType[];
   name: string;
 }
